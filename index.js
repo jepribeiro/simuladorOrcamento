@@ -31,7 +31,7 @@ const novoOrcamento = criarCalculadora();
 const valorHoraTrabalho = novoOrcamento.calculaHoraTrabalho();
 
 // Exibe o valor da hora de trabalho
-console.log(
+alert(
   `O valor do seu trabalho é de ${valorHoraTrabalho.toFixed(2)} reais por hora.`
 );
 
