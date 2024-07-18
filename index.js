@@ -10,7 +10,7 @@ class calculadora {
 
 // função para receber os parâmetros
 
-const calculaHoraTrabalho = () => {
+const recebeParametros = () => {
   let salario = parseFloat(
     prompt("Qual será o valor de salário que deseja receber?")
   );
@@ -19,16 +19,20 @@ const calculaHoraTrabalho = () => {
 
   let horasMes = parseInt(prompt("Quantas horas de trabalho por mês?"));
 
+  return { salario, custoFixo, horasMes };
+};
+const parametros = recebeParametros();
+
+//calcula valor hora/trabalho
+
+const calculaHoraTrabalho = ({ salario, custoFixo, horasMes }) => {
   const horaTrabalho = (salario + custoFixo) / horasMes;
 
   alert(`O valor do seu trabalho é de ${horaTrabalho} reais por hora. `);
-
-  return { salario, custoFixo, horasMes };
 };
-
 //cria o novo objeto/orçamento
-
-let novoOrcamento = new calculadora(calculaHoraTrabalho());
+calculaHoraTrabalho(parametros);
+let novoOrcamento = new calculadora(parametros);
 
 //mostra o objeto criado
 
